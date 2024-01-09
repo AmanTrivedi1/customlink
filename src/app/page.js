@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <>
    <main className="bg-primmary px-4 md:px-4 lg:px-2 xl:p-0 lg:h-screen h-full ">
-       <Header/>
-     <section className="  2xl:max-w-7xl 2xl:mt-4 mt-0 max-w-6xl m-auto flex md:flex-row flex-col-reverse justify-between">
+     <section className="  2xl:max-w-7xl  mt-0 max-w-6xl m-auto flex md:flex-row flex-col-reverse justify-between">
       <div className="max-w-lg md:mt-20 mt-0">
         <h1 className=" text-4xl md:text-5xl text-secondry lg:text-6xl font-semibold">Everything you are In one, simple link in bio.</h1>
           <p className=" md:mt-8   text-base text-secondry sm:text-xl">Join 40M+ people using Linktree for their link in bio. One link to help you share everything you
