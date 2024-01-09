@@ -1,7 +1,7 @@
+'use client'
+import HeroForm from "@/components/forms/HeroForm";
 import Image from "next/image";
-
 import { SocialIcon } from 'react-social-icons'
-
 
 export default function Home() {
   return (
@@ -26,14 +26,11 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <form className="flex mt-10 items-start " >
-                <input  className="max-w-sm py-2 focus:outline-none focus:shadowsecondry" placeholder="username..."  type="text"/>
-                <button type="submit" className="bg-black  text-white rounded-sm px-6 py-2 ">Joinnow</button>
-            </form>
+         <HeroForm/>
           </div>
       </div>
         <div>
-        <Image src="/herobg.svg" width={600}  height={400} />               
+        <Image src="/herobg.svg" width={600}  height={400} alt="heroimage" />               
         </div>
      </section>
    </main>
