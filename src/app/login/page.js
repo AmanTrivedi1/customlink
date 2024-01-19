@@ -20,7 +20,6 @@ export default async function LoginPage() {
         <Link href="/account">
             <button className="bg-[#E9E9E9] flex items-center justify-center gap-x-1 w-full px-4 py-2 rounded-sm "><RiDashboard2Line className="text-xl"/>Dashboard</button>
         </Link>
-        
         </div>
        </div>
        ) : (

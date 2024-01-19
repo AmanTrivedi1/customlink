@@ -1,9 +1,12 @@
-'use client'
+
 import HeroForm from "@/components/forms/HeroForm";
+import {getServerSession} from "next-auth";
 import Image from "next/image";
 import { SocialIcon } from 'react-social-icons'
+import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
   return (
     <>
    <main className="bg-primmary px-4 md:px-4 lg:px-2 xl:p-0 lg:h-screen h-full ">
@@ -26,7 +29,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-         <HeroForm/>
+          <HeroForm user={session?.user} />
           </div>
       </div>
         <div>
