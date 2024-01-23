@@ -4,7 +4,7 @@ import { HiLogout } from "react-icons/hi";
 import {signOut} from "next-auth/react";
 
 export default function LogoutButton({
-  className = 'flex items-center gap-2 border p-2 px-4 shadow',
+  className = 'flex items-center gap-2  p-2 px-4 ',
   iconLeft = false,
   iconClasses = '',
 }) {

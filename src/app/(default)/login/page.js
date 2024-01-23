@@ -1,8 +1,9 @@
 import LoginWithGoogle from "@/components/buttons/LoginWithGoogle";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+
 import { RiDashboard2Line } from "react-icons/ri";
 import Link from "next/link";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function LoginPage() {
   const session = await  getServerSession(authOptions)

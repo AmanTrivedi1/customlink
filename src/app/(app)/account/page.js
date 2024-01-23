@@ -3,14 +3,23 @@ import {getServerSession} from "next-auth";
 
 import {redirect} from "next/navigation";
 import UsernameForm from "@/components/forms/UsernameForm";
+import { Page } from "@/models/Page";
+import mongoose from "mongoose";
 
 export default async function AccountPage({searchParams}) {
-    const session = await getServerSession(authOptions);
-    const desiredUsername = searchParams?.desiredUsername;
-    if (!session) {
-      return redirect('/');
-    }
- 
+  const session = await getServerSession(authOptions);
+  const desiredUsername = searchParams?.desiredUsername;
+  if (!session) {
+    return redirect('/');
+  }
+  mongoose.connect(process.env.MONGO_URI);
+  const page = await Page.findOne({owner: session?.user?.email});
+
+  if(page) {
+    return  (
+      <div>Your desired Page:/{page.uri}</div>
+    )
+  }
 
   return (
     <div className='max-w-7xl m-auto sm:p-8 p-4'>
@@ -20,5 +29,3 @@ export default async function AccountPage({searchParams}) {
    </div>
   )
 }
-
-
