@@ -5,6 +5,7 @@ import {redirect} from "next/navigation";
 import UsernameForm from "@/components/forms/UsernameForm";
 import { Page } from "@/models/Page";
 import mongoose from "mongoose";
+import PageSettingForm from "@/components/forms/PageSettingsForm";
 
 export default async function AccountPage({searchParams}) {
   const session = await getServerSession(authOptions);
@@ -17,7 +18,7 @@ export default async function AccountPage({searchParams}) {
 
   if(page) {
     return  (
-      <div>Your desired Page:/{page.uri}</div>
+      <PageSettingForm page={page}/>
     )
   }
 

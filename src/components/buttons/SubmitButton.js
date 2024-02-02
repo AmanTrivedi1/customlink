@@ -7,7 +7,7 @@ export default function SubmitButton({children, className=''}) {
     <button
       type="submit"
       disabled={pending}
-      className={"bg-black flex items-center gap-x-2 px-4 sm:text-base text-sm py-2  rounded-sm hover:opacity-90 text-white " + className}
+      className={"bg-black flex items-center gap-x-2 px-4 sm:text-base text-sm py-2  rounded-lg hover:opacity-90 text-white " + className}
     >
       {pending && (
        <div role="status">

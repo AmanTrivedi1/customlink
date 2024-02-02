@@ -31,10 +31,10 @@ export default function HeroForm({user}) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="inline-flex items-center mt-8  shadow-lg  shadow-gray-500/20">
+      className="inline-flex items-center mt-8 mb-10  shadow-lg  shadow-gray-500/20">
       <input
         type="text"
-        className=" focus:outline-none  rounded-sm"
+        className=" focus:outline-none  rounded-sm px-2 py-[7px]"
         style={{backgroundColor:'white',marginBottom:0,paddingLeft:10}}
         placeholder="username "/>
       <button

@@ -7,14 +7,7 @@ import Image from 'next/image'
 import Sidebar from '@/components/layout/AppSidebar'
 import { redirect } from 'next/navigation'
 
-
-
 const poppins = Poppins({
-  weight: ["400", "500", "600", "700", "800", "900"],
-  subsets: ['latin'],
-})
-
-const inter = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ['latin'],
 })
@@ -29,26 +22,27 @@ export default async  function AppTemplate({ children , ...rest }) {
     return redirect('/')
   }
   
+  console.log(session?.user?.image)
   return (
     <html lang="en">
       <body className={poppins.className }>
         <main >
-          <Header/>
+          {/* <Header/> */}
         <div className='flex h-screen  '>
-          <div className='bg-primmary md:w-72 '>
-            <aside className='border-t  border-secondry '> 
+          <div className='bg-normal-dark md:w-72 '>
+            <aside className=' '> 
               <div className='flex items-center cursor-pointer p-4 gap-x-4 w-full truncate'>
-                <Image src={session?.user?.image} width={40} height={40} alt={"avatar"} style={{borderRadius:"50px"}}/>
+                {/* <Image src={session?.user?.image} width={40} height={40} alt={"avatar"} style={{borderRadius:"50px"}}/> */}
                 <div>
-                  <p className='text-secondry'>Hello,<span className='ml-1'>{session?.user?.name}</span></p>
-                  <p className='text-xs text-secondry'>{session?.user?.email}</p>
+                  <p className='text-white'>Hello,<span className='ml-1'>{session?.user?.name}</span></p>
+                  <p className='text-xs text-white'>{session?.user?.email}</p>
                 </div>
               </div>
              <Sidebar/>
             </aside>
           </div>
-          <div className='grow'>
-           <div className='max-w-4xl bg-secondry/20 w-full  p-4'>
+          <div className='grow flex items-center justify-center   '>
+           <div className='max-w-4xl   w-full  p-4'>
               {children}
             </div>
           </div>
