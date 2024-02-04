@@ -5,7 +5,9 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../api/auth/[...nextauth]/route'
 import Image from 'next/image'
 import Sidebar from '@/components/layout/AppSidebar'
+
 import { redirect } from 'next/navigation'
+import { Toaster } from 'react-hot-toast'
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -26,13 +28,15 @@ export default async  function AppTemplate({ children , ...rest }) {
   return (
     <html lang="en">
       <body className={poppins.className }>
+        <Toaster/>
         <main >
-          {/* <Header/> */}
         <div className='flex h-screen  '>
           <div className='bg-normal-dark md:w-72 '>
             <aside className=' '> 
               <div className='flex items-center cursor-pointer p-4 gap-x-4 w-full truncate'>
-                {/* <Image src={session?.user?.image} width={40} height={40} alt={"avatar"} style={{borderRadius:"50px"}}/> */}
+               <div className='w-10 h-10  border-[#f7f6f6] border-2 rounded-full'>
+                  <img className='h-full w-full rounded-full' src={session?.user?.image} alt="avatar"/>
+               </div>
                 <div>
                   <p className='text-white'>Hello,<span className='ml-1'>{session?.user?.name}</span></p>
                   <p className='text-xs text-white'>{session?.user?.email}</p>

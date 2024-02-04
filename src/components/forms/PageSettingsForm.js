@@ -8,7 +8,7 @@ import {faCloudArrowUp, faImage, faPalette, faSave, faUpload} from "@fortawesome
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import {useState} from "react";
-import { upload } from "@/app/libs/upload";
+import { upload } from "@/libs/upload";
 import toast from "react-hot-toast";
 
 export default function PageSettingsForm({page,user}) {
@@ -19,7 +19,7 @@ export default function PageSettingsForm({page,user}) {
   async function saveBaseSettings(formData) {
     const result = await savePageSettings(formData);
     if (result) {
-      toast.success('Saved!');
+      toast.success('Saved Successfully✨');
     }
   }
   async function handleCoverImageChange(ev) {
@@ -30,14 +30,16 @@ export default function PageSettingsForm({page,user}) {
   async function handleAvatarImageChange(ev) {
     await upload(ev, link => {
       setAvatar(link);
+      console.log(avatar);
+      console.log("Bhadve idhar dekho be yha hu main ")
     });
   }
   return (
-    <div className="backdrop-blur-3xl ">
-    <SectionBox>
+    <div className="backdrop-blur-3xl  ">
+   
       <form action={saveBaseSettings}>
         <div
-          className="py-4 -m-4 min-h-[300px] flex justify-center items-center bg-cover bg-center"
+          className="py-4 mt-10  min-h-[380px] w-full m-auto bg-gray-100  rounded-lg  flex justify-center items-center bg-cover bg-center"
           style={
             bgType === 'color'
               ? {backgroundColor:bgColor}
@@ -54,12 +56,12 @@ export default function PageSettingsForm({page,user}) {
               onChange={val => setBgType(val)}
             />
             {bgType === 'color' && (
-              <div className=" cursor-pointer rounded-full mt-2 p-3">
+              <div className=" cursor-pointer  rounded-full mt-2 p-3">
                 <div className="flex gap-2 justify-center">
                   <input
                     type="color"
                     name="bgColor"
-                    className="rounded-full"
+                    className=" h-6 w-8 p-[] "
                     onChange={ev => setBgColor(ev.target.value)}
                     defaultValue={page.bgColor} />
                 </div>
@@ -99,29 +101,32 @@ export default function PageSettingsForm({page,user}) {
               <FontAwesomeIcon size={'xl'} icon={faCloudArrowUp} />
             </label>
             <input onChange={handleAvatarImageChange} id="avatarIn" type="file" className="hidden"/>
+
+
+            
             <input type="hidden" name="avatar" value={avatar}/>
           </div>
         </div>
-        <div className="p-0">
+        <div className="p-2">
           <label className="input-label" htmlFor="nameIn">Display name</label>
           <input
             type="text"
             id="nameIn"
-            className="focus:outline-black/20"
+            className="focus:outline-black/20 rounded-lg"
             name="displayName"
             defaultValue={page.displayName}
-            placeholder="John Doe"/>
+            placeholder="Aman Trivedi"/>
           <label className="input-label" htmlFor="locationIn">Where you live</label>
           <input
             type="text"
             id="locationIn"
             name="location"
             defaultValue={page.location}
-            className="focus:outline-black/20"
+            className="focus:outline-black/20 rounded-lg"
             placeholder="Somewhere in the world"/>
           <label className="input-label" htmlFor="bioIn">Bio</label>
           <textarea
-            className="focus:outline-black/20"
+            className="focus:outline-black/20 rounded-lg"
             name="bio"
             defaultValue={page.bio}
             id="bioIn"
@@ -134,7 +139,7 @@ export default function PageSettingsForm({page,user}) {
          
         </div>
       </form>
-    </SectionBox>
+   
   </div>
   );
 }

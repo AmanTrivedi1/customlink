@@ -18,7 +18,7 @@ export default async function AccountPage({searchParams}) {
 
   if(page) {
     return  (
-      <PageSettingForm page={page}/>
+      <PageSettingForm page={page} user={session.user}/>
     )
   }
 

@@ -7,8 +7,6 @@ import Image from 'next/image'
 
 export default async  function Header  ()  {
  const session = await  getServerSession(authOptions)
-
-
  console.log(session)
   return (
     <div>
@@ -28,7 +26,7 @@ export default async  function Header  ()  {
           <div className='text-secondry flex  items-center gap-x-2'>
             <Link className='line-clamp-1 text-sm' href={"/account"}>
             {session?.user?.image ? (
-             <Image src={session.user.image} className='rounded-full' width={30} height={30} alt="userimage" />
+             <Image src={session?.user?.image} className='rounded-full' width={30} height={30} alt="userimage" />
                ) : (
              <div>
               {session?.user?.name}

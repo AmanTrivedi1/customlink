@@ -11,7 +11,7 @@ export async function savePageSettings(formData) {
   if (session) {
     const dataKeys = [
       'displayName','location',
-      'bio', 'bgType', 'bgColor', 'bgImage',
+      'bio', 'bgType', 'bgColor', 'bgImage'
     ];
 
     const dataToUpdate = {};
