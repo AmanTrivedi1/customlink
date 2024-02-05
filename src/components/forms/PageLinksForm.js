@@ -72,17 +72,17 @@ export default function PageLinksForm({page,user}) {
             handle={'.handle'}
             list={links} setList={setLinks}>
             {links.map(l => (
-              <div key={l.key} className=" md:flex gap-6 items-center">
+              <div key={l.key} className=" md:flex gap-6 mb-8 border-normal-dark/20 border-b pb-8 items-center">
                 <div className="handle">
                   <FontAwesomeIcon
                     className="text-normal-dark  mr-2 cursor-poin"
                     icon={faGripLines} />
                 </div>
                 <div className="">
-                  <div className="  inline-block relative aspect-square overflow-hidden w-16 h-16 inline-flex justify-center items-center">
+                  <div className="   relative aspect-square overflow-hidden w-16 h-16 inline-flex justify-center items-center ">
                     {l.icon && (
                       <Image
-                        className="w-full border border-normal-dark/30 border-4 p-[2px] rounded-full h-full object-cover"
+                        className="w-full  border-normal-dark/30 border-4 p-[2px] rounded-full h-full object-cover"
                         src={l.icon}
                         alt={'icon'}
                         width={64} height={64} />
@@ -97,7 +97,7 @@ export default function PageLinksForm({page,user}) {
                       id={'icon'+l.key}
                       type="file"
                       className="hidden"/>
-                    <label htmlFor={'icon'+l.key} className="border border-blue-700 rounded-lg  mt-2 py-2 px-3 flex items-center gap-1 text-blue-700 cursor-pointer mb-2 justify-center">
+                    <label htmlFor={'icon'+l.key} className="border bg-normal-dark text-white rounded-lg  mt-2 py-2 px-3 flex items-center gap-1  cursor-pointer mb-2 justify-center">
                       <FontAwesomeIcon icon={faCloudArrowUp} />
                     </label>
                     <button
