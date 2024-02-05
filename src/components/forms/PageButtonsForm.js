@@ -8,7 +8,16 @@ import {
   faFacebook,
   faGithub, faInstagram, faTelegram,
   faLinkedinIn,
+  faSnapchat,
+  faQuora,
+  faTwitter,
+  faPinterest,
+  faReddit,
+  faStackOverflow,
+  faSignalMessenger,
   faWhatsapp,
+  faFlickr,
+  faThreads,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faGripLines, faMobile, faPlus, faSave, faTrash} from "@fortawesome/free-solid-svg-icons";
@@ -17,15 +26,24 @@ import {useState} from "react";
 import toast from "react-hot-toast";
 
 export const allButtons = [
-  {key: 'email', 'label': 'e-mail', icon: faEnvelope, placeholder: 'test@example.com'},
-  {key: 'linkedin', 'label': 'linkedin', icon: faEnvelope, placeholder: '@username'},
+  {key: 'email', 'label': 'e-mail', icon: faEnvelope, placeholder: 'amantrivedi598@gmail.com'},
+  {key: 'signal', 'label': 'signal', icon: faSignalMessenger, placeholder: '@profileurl'},
+  {key: 'flicker', 'label': 'flicker', icon: faFlickr, placeholder: '@profileurl'},
+  {key: 'threads', 'label': 'threads', icon: faThreads, placeholder: '@profileurl'},
+  {key: 'pintrist', 'label': 'pintrist', icon: faPinterest, placeholder: '@profileurl'},
+  {key: 'quora', 'label': 'quora', icon: faQuora, placeholder: '@profileurl'},
+  {key: 'redit', 'label': 'redit', icon: faReddit, placeholder: '@profileurl'},
+  {key: 'twitter', 'label': 'twitter', icon: faTwitter, placeholder: '@profileurl'},
+  {key: 'linkedin', 'label': 'linkedin', icon: faLinkedinIn, placeholder: '@profileurl'},
+  {key: 'stackoverflow', 'label': 'stackoverflow', icon: faStackOverflow, placeholder: '@profileurl'},
+  {key: 'snapchat', 'label': 'snapchat', icon: faSnapchat, placeholder: '@profileurl'},
   {key: 'mobile', 'label': 'mobile', icon: faMobile, placeholder: '6392****68'},
-  {key: 'instagram', 'label': 'instagram', icon: faInstagram, placeholder: '@username'},
+  {key: 'instagram', 'label': 'instagram', icon: faInstagram, placeholder: '@profileurl'},
   {key: 'facebook', 'label': 'facebook', icon: faFacebook},
   {key: 'discord', 'label': 'discord', icon: faDiscord},
   {key: 'youtube', 'label': 'youtube', icon: faYoutube},
   {key: 'whatsapp', 'label': 'whatsapp', icon: faWhatsapp},
-  {key: 'github', 'label': 'github', icon: faGithub},
+  {key: 'github', 'label': 'github', icon: faGithub , placeholder:"https://github.com/AmanTrivedi1"},
   {key: 'telegram', 'label': 'telegram', icon: faTelegram},
 ];
 
@@ -48,7 +66,7 @@ export default function PageButtonsForm({user,page}) {
 
   async function saveButtons(formData) {
     await savePageButtons(formData);
-    toast.success('Settings saved!');
+    toast.success('Settings saved ');
   }
 
   function removeButton({key:keyToRemove}) {
@@ -63,7 +81,11 @@ export default function PageButtonsForm({user,page}) {
   return (
    <div className="mt-8">
       <form action={saveButtons}>
-        <h2 className="text-2xl font-bold mb-4">Additional Info</h2>
+        <div className="flex items-center ">
+          <h2 className="text-2xl font-bold mb-4">Additional Info</h2>
+          <p className="ml-2">for {user.name}</p>
+        </div>
+       
         <ReactSortable
           handle=".handle"
           list={activeButtons}
@@ -81,7 +103,7 @@ export default function PageButtonsForm({user,page}) {
                 <input
                   placeholder={b.placeholder}
                   name={b.key}
-                  className="rounded-lg px-2"
+                  className="rounded-lg px-2 focus:outline-normal-dark/30"
                   defaultValue={page?.buttons && page.buttons[b.key]}
                   type="text" style={{marginBottom:'0'}} />
                 <button
