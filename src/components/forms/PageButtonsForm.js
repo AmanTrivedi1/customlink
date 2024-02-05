@@ -23,7 +23,7 @@ import {
 import {faEnvelope, faGripLines, faMobile, faPlus, faSave, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
-import toast from "react-hot-toast";
+import { Toaster, toast } from 'sonner';
 
 export const allButtons = [
   {key: 'email', 'label': 'e-mail', icon: faEnvelope, placeholder: 'amantrivedi598@gmail.com'},
@@ -66,7 +66,7 @@ export default function PageButtonsForm({user,page}) {
 
   async function saveButtons(formData) {
     await savePageButtons(formData);
-    toast.success('Settings saved ');
+    toast.success('Link saved successfully ');
   }
 
   function removeButton({key:keyToRemove}) {
@@ -80,6 +80,7 @@ export default function PageButtonsForm({user,page}) {
 
   return (
    <div className="mt-8">
+    <Toaster/>
       <form action={saveButtons}>
         <div className="flex items-center ">
           <h2 className="text-2xl font-bold mb-4">Additional Info</h2>

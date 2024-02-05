@@ -14,21 +14,21 @@ export default function Sidebar(){
     console.log(path)
   return (
     <div className='h-screen  '>
-        <nav className='flex   text-white  flex-col justify-start '>
+        <nav className='flex  mt-4 ml-3 text-white  flex-col justify-start '>
                     <Link
-                    className={"flex py-2 px-1 items-center hover:bg-bg-dark  hover:text-white " + (path === "/account" ? "bg-bg-dark text-white" : " ")}
+                    className={"flex py-2 px-2 items-center hover:bg-bg-dark  rounded-lg hover:text-white " + (path === "/account" ? "bg-bg-dark text-white" : " ")}
                     href={"/account"}
                     >
                     <CiSettings className='w-6 h-6' /> <span className='ml-[4px]'>Settings</span>
                  </Link>
                  <Link
-                    className={"flex p-2 items-center hover:bg-bg-dark hover:text-white " + (path === "/analytics" ? "text-white bg-bg-dark" : " ")}
+                    className={"flex py-2 px-3 items-center rounded-lg hover:bg-bg-dark hover:text-white " + (path === "/analytics" ? "text-white bg-bg-dark" : " ")}
                     href={"/analytics"}
                     >
                     <SiSimpleanalytics className='w-4 h-4' /> <span className='ml-2'>Analytics</span>
                 </Link>
-            <Link className=' flex p-2 items-center hover:bg-bg-dark hover:text-white' href={"/"}> <IoIosReturnLeft className='w-4 h-4'/> <span className='ml-2'>Website</span></Link>
-            <LogoutButton iconLeft={true} className='hover:bg-bg-dark  hover:text-white flex  items-center gap-x-2 p-2 flex-row '/>
+            <Link className=' flex p-2 items-center rounded-lg hover:bg-bg-dark hover:text-white' href={"/"}> <IoIosReturnLeft className='w-4 h-4'/> <span className='ml-2'>Website</span></Link>
+            <LogoutButton iconLeft={true} className='hover:bg-bg-dark  rounded-lg hover:text-white flex  items-center gap-x-2 p-2 flex-row '/>
         </nav>
     </div>
   )

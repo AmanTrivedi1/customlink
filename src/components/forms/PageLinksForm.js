@@ -1,20 +1,19 @@
 'use client';
 import {savePageLinks} from "@/actions/pageActions";
 import SubmitButton from "@/components/buttons/SubmitButton";
-import SectionBox from "@/components/layout/SectionBox";
 import {upload} from "@/libs/upload";
 import {faCloudArrowUp, faGripLines, faLink, faPlus, faSave, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import {useState} from "react";
-import toast from "react-hot-toast";
+import { Toaster, toast } from 'sonner';
 import {ReactSortable} from "react-sortablejs";
 
 export default function PageLinksForm({page,user}) {
   const [links,setLinks] = useState(page.links || []);
   async function save() {
     await savePageLinks(links);
-    toast.success('Saved!');
+    toast.success('Link saved successfully');
   }
   function addNewLink() {
     setLinks(prev => {
@@ -58,6 +57,7 @@ export default function PageLinksForm({page,user}) {
   }
   return (
 <div className="mt-8">
+  <Toaster/>
       <form action={save}>
         <h2 className="text-2xl font-bold mb-4">Additional Links</h2>
         <button
@@ -79,10 +79,10 @@ export default function PageLinksForm({page,user}) {
                     icon={faGripLines} />
                 </div>
                 <div className="">
-                  <div className="   relative aspect-square overflow-hidden w-16 h-16 inline-flex justify-center items-center ">
+                  <div className=" border-normal-dark/30 border-[3px] rounded-full   relative aspect-square overflow-hidden w-16 h-16 inline-flex justify-center items-center ">
                     {l.icon && (
                       <Image
-                        className="w-full  border-normal-dark/30 border-4 p-[2px] rounded-full h-full object-cover"
+                        className="w-full   p-[2px] rounded-full h-full object-cover"
                         src={l.icon}
                         alt={'icon'}
                         width={64} height={64} />

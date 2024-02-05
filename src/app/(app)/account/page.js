@@ -21,7 +21,6 @@ export default async function AccountPage({searchParams}) {
   if(page) {
     return  (
       <div className="">
-         <h1 className="mt-2 md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">User Information</h1>
        <PageSettingForm page={page} user={session?.user}/>
        <PageButtonsForm page={page} user={session?.user} />
        <PageLinksForm page={page} user={session?.user} />

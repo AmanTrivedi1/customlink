@@ -3,7 +3,6 @@ import {savePageSettings} from "@/actions/pageActions";
 import "./PageSettings.css"
 import SubmitButton from "@/components/buttons/SubmitButton";
 import RadioTogglers from "@/components/formItems/radioTogglers";
-import SectionBox from "@/components/layout/SectionBox";
 import {faCloudArrowUp, faImage, faPalette, faSave, faUpload} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -19,7 +18,7 @@ export default function PageSettingsForm({page,user}) {
   async function saveBaseSettings(formData) {
     const result = await savePageSettings(formData);
     if (result) {
-      toast.success('Saved Successfully✨');
+      toast.success('Saved successfully✨');
     }
   }
   async function handleCoverImageChange(ev) {
@@ -31,12 +30,12 @@ export default function PageSettingsForm({page,user}) {
     await upload(ev, link => {
       setAvatar(link);
       console.log(avatar);
-      console.log("Bhadve idhar dekho be yha hu main ")
     });
   }
   return (
     <div className="backdrop-blur-3xl  ">
-   
+       <h1 className="mt-2 md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">Hello,{user?.name}</h1>
+       <p className="">Add your bio</p>
       <form action={saveBaseSettings}>
         <div
           className="py-4 mt-10  min-h-[380px] w-full m-auto bg-gray-100  rounded-lg  flex justify-center items-center bg-cover bg-center"
@@ -101,9 +100,6 @@ export default function PageSettingsForm({page,user}) {
               <FontAwesomeIcon size={'xl'} icon={faCloudArrowUp} />
             </label>
             <input onChange={handleAvatarImageChange} id="avatarIn" type="file" className="hidden"/>
-
-
-            
             <input type="hidden" name="avatar" value={avatar}/>
           </div>
         </div>
@@ -131,15 +127,12 @@ export default function PageSettingsForm({page,user}) {
             defaultValue={page.bio}
             id="bioIn"
             placeholder="Your bio goes here..." />
-         
             <SubmitButton className="bg-bg-dark flex items-start  rounded-lg ">
               <FontAwesomeIcon icon={faSave} />
               <span>Save</span>
             </SubmitButton>
-         
         </div>
       </form>
-   
   </div>
   );
 }
