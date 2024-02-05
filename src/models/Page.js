@@ -9,8 +9,8 @@ const PageSchema = new Schema({
   bgType: {type: String, default: 'color'},
   bgColor: {type: String, default: '#222222'},
   bgImage: {type: String, default: ''},
-//   buttons: {type: Object, default: {}},
-//   links: {type: Object, default: []},
+  buttons: {type: Object, default: {}},
+  links: {type: Object, default: []},
 }, {timestamps: true});
 
 export const Page = models?.Page || model('Page', PageSchema);

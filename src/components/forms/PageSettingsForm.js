@@ -107,7 +107,7 @@ export default function PageSettingsForm({page,user}) {
             <input type="hidden" name="avatar" value={avatar}/>
           </div>
         </div>
-        <div className="p-2">
+        <div className="">
           <label className="input-label" htmlFor="nameIn">Display name</label>
           <input
             type="text"
@@ -126,13 +126,13 @@ export default function PageSettingsForm({page,user}) {
             placeholder="Somewhere in the world"/>
           <label className="input-label" htmlFor="bioIn">Bio</label>
           <textarea
-            className="focus:outline-black/20 rounded-lg"
+            className="focus:outline-black/20 rounded-lg min-h-40"
             name="bio"
             defaultValue={page.bio}
             id="bioIn"
             placeholder="Your bio goes here..." />
          
-            <SubmitButton className="bg-bg-dark px-10 py-2 rounded-lg ">
+            <SubmitButton className="bg-bg-dark flex items-start  rounded-lg ">
               <FontAwesomeIcon icon={faSave} />
               <span>Save</span>
             </SubmitButton>

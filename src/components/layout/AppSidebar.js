@@ -13,7 +13,7 @@ export default function Sidebar(){
     const path = usePathname();
     console.log(path)
   return (
-    <div>
+    <div className='h-screen  '>
         <nav className='flex   text-white  flex-col justify-start '>
                     <Link
                     className={"flex py-2 px-1 items-center hover:bg-bg-dark  hover:text-white " + (path === "/account" ? "bg-bg-dark text-white" : " ")}

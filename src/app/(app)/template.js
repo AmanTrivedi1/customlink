@@ -30,7 +30,7 @@ export default async  function AppTemplate({ children , ...rest }) {
       <body className={poppins.className }>
         <Toaster/>
         <main >
-        <div className='flex h-screen  '>
+        <div className='flex  '>
           <div className='bg-normal-dark md:w-72 '>
             <aside className=' '> 
               <div className='flex items-center cursor-pointer p-4 gap-x-4 w-full truncate'>

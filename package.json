@@ -17,6 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "font-awesome": "^4.7.0",
+    "react-sortablejs": "^6.1.4",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.0",
     "next": "14.0.4",
