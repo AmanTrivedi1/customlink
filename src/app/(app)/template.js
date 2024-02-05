@@ -1,13 +1,14 @@
 import {Inter , Poppins } from 'next/font/google'
 import '../globals.css'
-import Header from '@/components/Header'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../api/auth/[...nextauth]/route'
-import Image from 'next/image'
 import Sidebar from '@/components/layout/AppSidebar'
-
+import { VscOpenPreview } from "react-icons/vsc";
 import { redirect } from 'next/navigation'
 import { Toaster } from 'react-hot-toast'
+import { Page } from '@/models/Page'
+import mongoose from 'mongoose'
+import Link from 'next/link'
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -20,9 +21,16 @@ export const metadata = {
 }
 export default async  function AppTemplate({ children , ...rest }) {
   const session = await getServerSession(authOptions);
+
+
+
   if(!session){
     return redirect('/')
   }
+   
+  mongoose.connect(process.env.MONGO_URI);
+  const page = await Page.findOne({owner:session.user.email});
+
   
   console.log(session?.user?.image)
   return (
@@ -30,9 +38,10 @@ export default async  function AppTemplate({ children , ...rest }) {
       <body className={poppins.className }>
         <Toaster/>
         <main >
-        <div className='flex  '>
+          <div className=''>
+        <div className='flex   '>
           <div className='bg-normal-dark md:w-72 '>
-            <aside className=' '> 
+            <aside className='fixed bg-normal-dark md:w-72 top-0 '> 
               <div className='flex items-center cursor-pointer p-4 gap-x-4 w-full truncate'>
                <div className='w-10 h-10  border-[#f7f6f6] border-2 rounded-full'>
                   <img className='h-full w-full rounded-full' src={session?.user?.image} alt="avatar"/>
@@ -42,14 +51,26 @@ export default async  function AppTemplate({ children , ...rest }) {
                   <p className='text-xs text-white'>{session?.user?.email}</p>
                 </div>
               </div>
+              <div>
+                 {
+                  page && (
+                    <div>
+                       <Link target='_blank' href={'/'+page?.uri} className='flex py-2 px-2 items-center ml-3 text-white hover:bg-bg-dark  rounded-lg hover:text-white'>
+                           <VscOpenPreview className='text-xl text-white line-clamp-1 flex items-center  mr-2'/><span>Preview/{page?.uri}</span>
+                       </Link>
+                    </div>
+                  )
+                 }
+              </div>
              <Sidebar/>
             </aside>
           </div>
-          <div className='grow flex items-center justify-center   '>
+          <div className='grow flex items-center justify-center'>
            <div className='max-w-4xl   w-full  p-4'>
               {children}
             </div>
           </div>
+        </div>
         </div>
         </main>
       </body>
