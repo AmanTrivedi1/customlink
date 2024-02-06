@@ -26,14 +26,14 @@ export default async  function Header  ()  {
           <div className='text-secondry flex  items-center gap-x-2'>
             <Link className='line-clamp-1 text-sm' href={"/account"}>
             {session?.user?.image ? (
-             <Image src={session?.user?.image} className='rounded-full' width={30} height={30} alt="userimage" />
+             <img src={session?.user?.image} className='rounded-full w-8 h-8'  alt="userimage" />
                ) : (
              <div>
               {session?.user?.name}
              </div>
               )}
             </Link>
-              <LogoutButton className='bg-black opacity-100 text-sm  hover:opacity-90 text-white px-4 py-2 rounded-sm flex items-center gap-x-2'/>
+              <LogoutButton className='bg-black opacity-100 text-sm  hover:opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-x-2'/>
           </div>
        
           </>
