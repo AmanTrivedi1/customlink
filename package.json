@@ -16,7 +16,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "date-fns": "^3.3.1",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^11.0.3",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.0",
     "next": "14.0.4",
@@ -27,6 +29,7 @@
     "react-icons": "^4.12.0",
     "react-social-icons": "^6.7.0",
     "react-sortablejs": "^6.1.4",
+    "recharts": "^2.11.0",
     "sonner": "^1.4.0",
     "uniqid": "^5.4.0"
   },

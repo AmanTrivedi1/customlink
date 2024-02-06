@@ -1,0 +1,17 @@
+<svg width="124" height="124" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 124 124" aria-hidden="true">
+  <path fill="#fff" fill-rule="evenodd" d="m43.184 54.206-35.557.137a7.656 7.656 0 0 0 0 15.313l35.557.138-25.045 25.24a7.657 7.657 0 0 0 10.828 10.827l25.24-25.045.136 35.557a7.657 7.657 0 0 0 15.313 0l.138-35.557 25.24 25.045a7.656 7.656 0 0 0 10.827-10.828l-25.045-25.24 35.557-.137a7.657 7.657 0 0 0 0-15.313l-35.557-.137 25.045-25.24a7.657 7.657 0 0 0-10.828-10.828l-25.24 25.046-.137-35.557a7.657 7.657 0 0 0-15.313 0l-.137 35.557-25.24-25.045a7.657 7.657 0 0 0-10.828 10.828l25.046 25.24Z" clip-rule="evenodd"></path>
+  <path fill="url(#paint0_radial_2080_57111)" fill-rule="evenodd" d="m43.184 54.206-35.557.137a7.656 7.656 0 0 0 0 15.313l35.557.138-25.045 25.24a7.657 7.657 0 0 0 10.828 10.827l25.24-25.045.136 35.557a7.657 7.657 0 0 0 15.313 0l.138-35.557 25.24 25.045a7.656 7.656 0 0 0 10.827-10.828l-25.045-25.24 35.557-.137a7.657 7.657 0 0 0 0-15.313l-35.557-.137 25.045-25.24a7.657 7.657 0 0 0-10.828-10.828l-25.24 25.046-.137-35.557a7.657 7.657 0 0 0-15.313 0l-.137 35.557-25.24-25.045a7.657 7.657 0 0 0-10.828 10.828l25.046 25.24Z" clip-rule="evenodd"></path>
+  <path fill="url(#pattern-home-animate-asterisk-0)" fill-rule="evenodd" d="m43.184 54.206-35.557.137a7.656 7.656 0 0 0 0 15.313l35.557.138-25.045 25.24a7.657 7.657 0 0 0 10.828 10.827l25.24-25.045.136 35.557a7.657 7.657 0 0 0 15.313 0l.138-35.557 25.24 25.045a7.656 7.656 0 0 0 10.827-10.828l-25.045-25.24 35.557-.137a7.657 7.657 0 0 0 0-15.313l-35.557-.137 25.045-25.24a7.657 7.657 0 0 0-10.828-10.828l-25.24 25.046-.137-35.557a7.657 7.657 0 0 0-15.313 0l-.137 35.557-25.24-25.045a7.657 7.657 0 0 0-10.828 10.828l25.046 25.24Z" clip-rule="evenodd" style="mix-blend-mode:multiply"></path>
+  <defs>
+    <radialGradient id="paint0_radial_2080_57111" cx="0" cy="0" r="1" gradientTransform="rotate(-90 63.541 25.385) scale(97.6761)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEBE7"></stop>
+      <stop offset=".672" stop-color="#FF9C7C"></stop>
+      <stop offset=".816" stop-color="#FF9983"></stop>
+      <stop offset=".901" stop-color="#FF774B"></stop>
+      <stop offset="1" stop-color="#E76F00"></stop>
+    </radialGradient>
+    <pattern id="pattern-home-animate-asterisk-0" width=".806" height=".806" patternContentUnits="objectBoundingBox">
+      <use xlink:href="#svg-noise" transform="scale(.00161)"></use>
+    </pattern>
+  </defs>
+</svg>

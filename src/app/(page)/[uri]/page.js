@@ -107,7 +107,7 @@ export default async function UserPage({params}) {
           key={link.url}
           target="_blank"
           ping={process.env.URL+'api/click?url='+ btoa(link.url)+'&page='+page.uri}
-          className="bg-bg-dark backdrop-blur-md  rounded-lg  block flex"
+          className="bg-bg-dark backdrop-blur-md  rounded-lg   flex"
           href={link.url}>
           <div className=" ">
             <div className="w-16 h-16  backdrop-blur-md backdrop-brightness-200 bg-white/10  relative flex items-center justify-center ">
