@@ -33,6 +33,6 @@ const VisualPage = () => {
      </div>
     </div>
   )
-
+}
 
 export default VisualPage
