@@ -9,10 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import { Page } from '@/models/Page'
 import mongoose from 'mongoose'
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faBars, faLink } from '@fortawesome/free-solid-svg-icons'
-
+import { FaArrowRightLong } from "react-icons/fa6";
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ['latin'],
@@ -36,8 +33,8 @@ export default async  function AppTemplate({ children , ...rest }) {
       <body className={poppins.className }>
         <Toaster/>
             <main className="md:flex min-h-screen">
-         <label htmlFor="navCb" className="md:hidden  p-2 m-auto inline-flex items-center gap-2 cursor-pointer">
-            <FontAwesomeIcon icon={faBars} />
+         <label htmlFor="navCb" className="md:hidden bg-normal-dark text-white  p-2 m-auto inline-flex items-center gap-2 cursor-pointer">
+            <FaArrowRightLong/>
         </label>
       <input id="navCb" type="checkbox" className="hidden" />
       <label htmlFor="navCb" className="hidden backdrop fixed inset-0 bg-black/80 z-10"></label>
