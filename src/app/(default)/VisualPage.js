@@ -1,7 +1,7 @@
 
 import AnimationWrapper from '@/components/Animation';
 import HeroForm from '@/components/forms/HeroForm';
-import Link from 'next/link';
+
 import React from 'react'
 import { CiLink } from "react-icons/ci";
 const VisualPage = () => {
