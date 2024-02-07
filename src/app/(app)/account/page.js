@@ -5,6 +5,7 @@ import {redirect} from "next/navigation";
 import UsernameForm from "@/components/forms/UsernameForm";
 import { Page } from "@/models/Page";
 import mongoose from "mongoose";
+import cloneDeep from 'clone-deep';
 import PageSettingForm from "@/components/forms/PageSettingsForm";
 import PageButtonsForm from "@/components/forms/PageButtonsForm";
 import PageLinksForm from "@/components/forms/PageLinksForm";
@@ -17,13 +18,14 @@ export default async function AccountPage({searchParams}) {
   }
   mongoose.connect(process.env.MONGO_URI);
   const page = await Page.findOne({owner: session?.user?.email});
-
+  const leanPage = cloneDeep(page.toJSON());
+  leanPage._id = leanPage._id.toString();
   if(page) {
     return  (
       <div className="p-2 md:p-8 m-auto">
-       <PageSettingForm page={page} user={session?.user}/>
-       <PageButtonsForm page={page} user={session?.user} />
-       <PageLinksForm page={page} user={session?.user} />
+       <PageSettingForm page={leanPage} user={session?.user}/>
+       <PageButtonsForm page={leanPage} user={session?.user} />
+       <PageLinksForm page={leanPage} user={session?.user} />
       </div>
       
     )

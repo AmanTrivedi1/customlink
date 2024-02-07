@@ -24,17 +24,12 @@ export const metadata = {
 }
 export default async  function AppTemplate({ children , ...rest }) {
   const session = await getServerSession(authOptions);
-
-
-
   if(!session){
     return redirect('/')
   }
-   
   mongoose.connect(process.env.MONGO_URI);
   const page = await Page.findOne({owner:session.user.email});
 
-  
   console.log(session?.user?.image)
   return (
     <html lang="en">
