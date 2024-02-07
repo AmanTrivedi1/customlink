@@ -10,15 +10,15 @@ export async function POST(req) {
     const s3Client = new S3Client({
       region: 'us-east-1',
       credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.AWSS_ACCESS_KEY,
+        secretAccessKey: process.env.AWSS_SECRET_ACCESS_KEY,
       },
     });
 
     const randomId = uniqid();
     const ext = file.name.split('.').pop();
     const newFilename = randomId + '.' + ext;
-    const bucketName = process.env.BUCKET_NAME;
+    const bucketName = process.env.BUCKET_NAMES;
 
     const chunks = [];
     for await (const chunk of file.stream()) {
