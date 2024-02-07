@@ -35,10 +35,8 @@ export default async  function Header  ()  {
             </Link>
               <LogoutButton className='bg-white text-normal-dark opacity-100 text-sm  hover:opacity-90  px-4 py-2 rounded-lg flex items-center '/>
           </div>
-       
           </>
         }
-       
       </div>
     </header>
     </div>
