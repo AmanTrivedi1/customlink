@@ -10,7 +10,7 @@ export default async  function Header  ()  {
  console.log(session)
   return (
     <div>
-       <header className=" bg-normal-dark md:py-4 py-2 ">
+       <header className=" bg-normal-dark p-4  ">
       <div className=" px-4  2xl:max-w-7xl max-w-6xl flex justify-between mx-auto ">
         <div className="flex items-center ">
           <Link href={'/'} className="flex text-xl items-center  text-white">

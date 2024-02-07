@@ -97,7 +97,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex justify-center pt-10 bg-normal-dark text-white  h-screen flex-col md:px-12 lg:px-16 xl:px-20 2xl:px-24 px-6 mb-8">
+    <div className="flex justify-center pt-10 bg-normal-dark text-white   flex-col md:px-12 lg:px-16 xl:px-20 2xl:px-24 px-6 ">
       <div className="flex justify-center items-baseline">
         <div>
           <motion.span
@@ -133,7 +133,7 @@ const HomePage = () => {
           >
             <Image src={RotatingFlower} alt="Your Alt Text" className="w-12" />
           </motion.span>
-          {/* <motion.span/> */}
+      
         </div>
         {showSVG ? (
           <motion.span
