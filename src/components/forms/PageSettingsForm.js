@@ -33,12 +33,12 @@ export default function PageSettingsForm({page,user}) {
     });
   }
   return (
-    <div className="backdrop-blur-3xl  ">
-       <h1 className="mt-2 md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">Hello,{user?.name}</h1>
+    <div className="backdrop-blur-3xl  max-w-4xl m-auto ">
+       <h1 className=" md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">Hello,{user?.name}</h1>
        <p className="">Add your bio</p>
       <form action={saveBaseSettings}>
         <div
-          className="py-4 mt-10  min-h-[380px] w-full m-auto bg-gray-100  rounded-lg  flex justify-center items-center bg-cover bg-center"
+          className="py-2 mt-4  min-h-[380px] w-full m-auto bg-gray-100  rounded-lg  flex justify-center items-center bg-cover bg-center"
           style={
             bgType === 'color'
               ? {backgroundColor:bgColor}

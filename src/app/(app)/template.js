@@ -1,14 +1,17 @@
 import {Inter , Poppins } from 'next/font/google'
 import '../globals.css'
 import { getServerSession } from 'next-auth'
+import { VscOpenPreview } from "react-icons/vsc";
 import { authOptions } from '../api/auth/[...nextauth]/route'
 import Sidebar from '@/components/layout/AppSidebar'
-import { VscOpenPreview } from "react-icons/vsc";
 import { redirect } from 'next/navigation'
 import { Toaster } from 'react-hot-toast'
 import { Page } from '@/models/Page'
 import mongoose from 'mongoose'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faBars, faLink } from '@fortawesome/free-solid-svg-icons'
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -37,42 +40,47 @@ export default async  function AppTemplate({ children , ...rest }) {
     <html lang="en">
       <body className={poppins.className }>
         <Toaster/>
-        <main >
-          <div className=''>
-        <div className='flex   '>
-          <div className='bg-normal-dark md:w-72 '>
-            <aside className='fixed bg-normal-dark md:w-72 top-0 '> 
-              <div className='flex items-center cursor-pointer p-4 gap-x-4 w-full truncate'>
-               <div className='w-10 h-10  border-[#f7f6f6] border-2 rounded-full'>
-                  <img className='h-full w-full rounded-full' src={session?.user?.image} alt="avatar"/>
-               </div>
-                <div>
-                  <p className='text-white'>Hello,<span className='ml-1'>{session?.user?.name}</span></p>
-                  <p className='text-xs text-white'>{session?.user?.email}</p>
-                </div>
-              </div>
-              <div>
-                 {
-                  page && (
-                    <div>
-                       <Link target='_blank' href={'/'+page?.uri} className='flex py-2 px-2 items-center ml-3 text-white hover:bg-bg-dark  rounded-lg hover:text-white'>
-                           <VscOpenPreview className='text-xl text-white line-clamp-1 flex items-center  mr-2'/><span>Preview/{page?.uri}</span>
-                       </Link>
-                    </div>
-                  )
-                 }
-              </div>
-             <Sidebar/>
-            </aside>
-          </div>
-          <div className='grow flex items-center justify-center'>
-           <div className='max-w-4xl   w-full  p-4'>
-              {children}
+            <main className="md:flex min-h-screen">
+         <label htmlFor="navCb" className="md:hidden  p-2 m-auto inline-flex items-center gap-2 cursor-pointer">
+            <FontAwesomeIcon icon={faBars} />
+        </label>
+      <input id="navCb" type="checkbox" className="hidden" />
+      <label htmlFor="navCb" className="hidden backdrop fixed inset-0 bg-black/80 z-10"></label>
+      <aside className="bg-normal-dark w-80 shadow fixed md:static -left-80 top-0 bottom-0 z-20 transition-all">
+        <div className="sticky top-0 pt-2">
+          <div className="flex items-center gap-x-2 ml-4 mb-10 mt-4 p-2 ">
+            <div>
+               <img src={session.user.image} className='h-10 w-10 rounded-full' alt={'avatar'} />
+            </div>
+            <div className='max-w-44 truncate'>
+              <p className='text-white/80 text-sm'>Welcome<span className='text-white text-base ml-2'>{session?.user?.name}</span></p>
+              <p className='text-white text-sm'> {session?.user?.email}</p>
             </div>
           </div>
+          {page && (
+            <div className=''>
+                <Link
+                target="_blank"
+                    href={'/'+page.uri}
+                    className="text-center line-clamp-1 py-2 px-3 rounded-l-lg hover:bg-[#222222] text-white flex gap-1  ml-2">
+                      <div className='flex items-center gap-x-2'>
+                        <VscOpenPreview className='text-white text-lg'/> <span className=" text-gray-300"> Preview/</span>
+                      </div>
+                     
+                    <span>{page.uri}</span>
+                </Link>
+            </div>  
+          
+          )}
+          <div className="text-center">
+            <Sidebar />
+          </div>
         </div>
-        </div>
-        </main>
+      </aside>
+      <div className="grow">
+        {children}
+      </div>
+    </main>
       </body>
     </html>
   )

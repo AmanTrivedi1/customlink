@@ -97,7 +97,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex justify-center bg-normal-dark text-white  h-screen flex-col md:px-12 lg:px-16 xl:px-20 2xl:px-24 px-6 mb-8">
+    <div className="flex justify-center pt-10 bg-normal-dark text-white  h-screen flex-col md:px-12 lg:px-16 xl:px-20 2xl:px-24 px-6 mb-8">
       <div className="flex justify-center items-baseline">
         <div>
           <motion.span
@@ -219,6 +219,9 @@ const HomePage = () => {
           </motion.div>
         )}
       </div>
+       <div className="flex items-center justify-center">
+         <HeroForm/>
+      </div>
       <div className="flex justify-center items-baseline">
         <motion.span
           initial={{ opacity: 0, scaleY: 0, originY: 1 }}
@@ -276,9 +279,7 @@ const HomePage = () => {
           <Image src={FourLeafFlowerSVG} alt="Your Alt Text" className="w-12" />
         </motion.span>
       </div>
-      <div className="flex items-center justify-center">
-         <HeroForm/>
-      </div>
+     
       
     </div>
   );

@@ -50,7 +50,7 @@ export default async function AnalyticsPage() {
   });
 
   return (
-    <div  className=" md:block hidden   ">
+    <div  className=" md:block  max-w-4xl m-auto mt-8 p-2 ">
       <div className=" border-bg-dark/30  p-2 border-2 rounded-lg" >
         <h2 className="text-xl mb-6 text-center text-bg-dark font-semibold ">Click Graph</h2>
         <Chart data={groupedViews.map(o => ({
@@ -62,7 +62,7 @@ export default async function AnalyticsPage() {
         <h2 className="text-xl mb-6 mt-8 text-center text-bg-dark font-semibold">AnalyticsData</h2>
         {page.links.map(link => (
           <div key={link.title} className="md:flex gap-4 items-center border-t border-gray-200 py-4">
-            <div className="text-blue-500 pl-4">
+            <div className="text-blue-500 h-10 w-10 pl-4">
               <FontAwesomeIcon icon={faLink} />
             </div>
             <div className="grow">

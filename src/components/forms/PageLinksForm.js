@@ -56,7 +56,7 @@ export default function PageLinksForm({page,user}) {
     );
   }
   return (
-<div className="mt-8">
+<div className="mt-8 max-w-4xl m-auto ">
   <Toaster/>
       <form action={save}>
         <h2 className="text-2xl font-bold mb-4">Additional Links</h2>

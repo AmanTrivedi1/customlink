@@ -31,7 +31,7 @@ export default function HeroForm({user}) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="inline-flex items-center mt-8 mb-10  shadow-lg  shadow-gray-500/20">
+      className="inline-flex items-center   shadow-lg  shadow-gray-500/20">
       <input
         type="text"
         className=" focus:outline-none text-normal-dark max-w-xs text-norm  rounded-l-lg px-2 py-[7px]"

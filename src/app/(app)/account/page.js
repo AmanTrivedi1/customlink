@@ -20,7 +20,7 @@ export default async function AccountPage({searchParams}) {
 
   if(page) {
     return  (
-      <div className="">
+      <div className="p-2 md:p-8 m-auto">
        <PageSettingForm page={page} user={session?.user}/>
        <PageButtonsForm page={page} user={session?.user} />
        <PageLinksForm page={page} user={session?.user} />

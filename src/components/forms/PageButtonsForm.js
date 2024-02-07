@@ -79,7 +79,7 @@ export default function PageButtonsForm({user,page}) {
   const availableButtons = allButtons.filter(b1 => !activeButtons.find(b2 => b1.key === b2.key));
 
   return (
-   <div className="mt-8">
+   <div className="mt-8 max-w-4xl m-auto ">
     <Toaster/>
       <form action={saveButtons}>
         <div className="flex items-center ">
