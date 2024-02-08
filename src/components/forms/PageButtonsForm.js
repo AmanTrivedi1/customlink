@@ -84,9 +84,7 @@ export default function PageButtonsForm({user,page}) {
       <form action={saveButtons}>
         <div className="flex items-center ">
           <h2 className="text-2xl font-bold mb-4">Additional Info</h2>
-          <p className="ml-2">for {user.name}</p>
         </div>
-       
         <ReactSortable
           handle=".handle"
           list={activeButtons}

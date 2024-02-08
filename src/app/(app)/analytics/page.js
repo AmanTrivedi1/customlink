@@ -19,6 +19,16 @@ export default async function AnalyticsPage() {
   }
   const page = await Page.findOne({ owner: session.user.email });
 
+
+  if (!page) {
+    return (
+      <>
+       <div className="text-center font-semibold text-xl h-screen flex items-center justify-center ">Looks like no one visited <br/> your profile till now😔</div>
+      </>
+    )
+  }
+
+
   const groupedViews = await Event.aggregate([
     {
       $match: {

@@ -34,7 +34,7 @@ export default function PageSettingsForm({page,user}) {
   }
   return (
     <div className="backdrop-blur-3xl  max-w-4xl m-auto ">
-       <h1 className=" md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">Hello,{user?.name}</h1>
+       <h1 className=" md:text-3xl sm:text-2xl text-xl font-semibold text-normal-dark">Hello,{page?.uri}</h1>
        <p className="">Add your bio</p>
       <form action={saveBaseSettings}>
         <div

@@ -58,7 +58,6 @@ export default async  function AppTemplate({ children , ...rest }) {
                       <div className='flex items-center gap-x-2'>
                         <VscOpenPreview className='text-white text-lg'/> <span className=" text-gray-300"> Preview/</span>
                       </div>
-                     
                     <span>{page.uri}</span>
                 </Link>
             </div>  

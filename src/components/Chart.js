@@ -1,10 +1,15 @@
 'use client';
 
-import {addDays, differenceInDays, formatISO9075, parseISO} from "date-fns";
-import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import { addDays, differenceInDays, formatISO9075, parseISO } from "date-fns";
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 
-export default function Chart({data}) {
+export default function Chart({ data }) {
+  // Check if data array is empty
+  if (data.length === 0) {
+    return <div>No data available</div>;
+  }
+
   const xLabelKey = Object.keys(data[0]).find(key => key !== 'date');
 
   const dataWithoutGaps = [];
@@ -37,11 +42,11 @@ export default function Chart({data}) {
   return (
     <div className="">
       <ResponsiveContainer width="100%" height={200}>
-          <LineChart width={730} height={250} data={dataWithoutGaps}
-                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart width={730} height={250} data={dataWithoutGaps}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid horizontal={false} strokeWidth="2" stroke="#254F1A" />
-          <XAxis dataKey="date" axisLine={false} tickLine={false} tickMargin={10} tick={{fill:'#0F0F0F'}} />
-          <YAxis axisLine={false} tickLine={false} tickMargin={10} tick={{fill:'#222222'}} />
+          <XAxis dataKey="date" axisLine={false} tickLine={false} tickMargin={10} tick={{ fill: '#0F0F0F' }} />
+          <YAxis axisLine={false} tickLine={false} tickMargin={10} tick={{ fill: '#222222' }} />
           <Tooltip />
           <Line
             type="monotone" dataKey={xLabelKey} stroke="#254F1A" strokeWidth="4" />
