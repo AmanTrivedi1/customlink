@@ -5,9 +5,9 @@ import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YA
 
 
 export default function Chart({ data }) {
-  // Check if data array is empty
+ 
   if (data.length === 0) {
-    return <div>No data available</div>;
+    return <div>Data nhi h bhai</div>;
   }
 
   const xLabelKey = Object.keys(data[0]).find(key => key !== 'date');

@@ -38,7 +38,7 @@ export default function PageSettingsForm({page,user}) {
        <p className="">Add your bio</p>
       <form action={saveBaseSettings}>
         <div
-          className="py-2 mt-4  min-h-[380px] w-full m-auto bg-gray-100  rounded-lg  flex justify-center items-center bg-cover bg-center"
+          className="py-2 mt-4  min-h-[380px] w-full m-auto border-dashed border-2 border-bg-dark/50  rounded-lg  flex justify-center items-center bg-cover bg-center"
           style={
             bgType === 'color'
               ? {backgroundColor:bgColor}
@@ -67,7 +67,7 @@ export default function PageSettingsForm({page,user}) {
               </div>
             )}
             {bgType === 'image' && (
-              <div className="flex justify-center ">
+              <div className="flex  justify-center ">
                 <label
                   className="bg-black text-white shadow rounded-full p-3 mt-2 flex gap-2"
                 >
@@ -75,6 +75,7 @@ export default function PageSettingsForm({page,user}) {
                   <input 
                     type="file"
                     onChange={handleCoverImageChange}
+                    accept=".jpg, .jpeg, .png" 
                     className="hidden"/>
                   <div className="flex gap-2 items-center  cursor-pointer">
                     <FontAwesomeIcon
@@ -99,7 +100,7 @@ export default function PageSettingsForm({page,user}) {
               className="absolute bottom-0 -right-2 bg-white p-2 rounded-full shadow shadow-black/50 aspect-square flex items-center cursor-pointer">
               <FontAwesomeIcon size={'xl'} icon={faCloudArrowUp} />
             </label>
-            <input onChange={handleAvatarImageChange} id="avatarIn" type="file" className="hidden"/>
+            <input onChange={handleAvatarImageChange}   accept=".jpg, .jpeg, .png"  id="avatarIn" type="file" className="hidden"/>
             <input type="hidden" name="avatar" value={avatar}/>
           </div>
         </div>

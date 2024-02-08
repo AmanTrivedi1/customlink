@@ -95,6 +95,7 @@ export default function PageLinksForm({page,user}) {
                     <input
                       onChange={ev => handleUpload(ev,l.key)}
                       id={'icon'+l.key}
+                      accept=".jpg, .jpeg, .png" 
                       type="file"
                       className="hidden"/>
                     <label htmlFor={'icon'+l.key} className="border bg-normal-dark text-white rounded-lg  mt-2 py-2 px-3 flex items-center gap-1  cursor-pointer mb-2 justify-center">

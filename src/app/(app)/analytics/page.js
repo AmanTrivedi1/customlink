@@ -9,7 +9,7 @@ import { differenceInDays, formatISO9075, isToday } from "date-fns";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
+// import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 
 export default async function AnalyticsPage() {
   mongoose.connect(process.env.MONGO_URI);
@@ -54,10 +54,27 @@ export default async function AnalyticsPage() {
     }
   ]);
 
+
+
+
+
   const clicks = await Event.find({
     page: page.uri,
     type: 'click',
   });
+
+  if (groupedViews.length === 0 && clicks.length === 0) {
+    return (
+      <div className="flex h-screen p-4 flex-col items-center justify-center ">
+        <div>
+          <img  className="max-w-xs" src="https://res.cloudinary.com/dmlts9lbk/image/upload/v1705598420/empty_u3jzi3.png" alt="empty"/>
+        </div>
+        <div>
+          <h1 className="text-2xl font-semibold text-center">Looks like no one visited  <br/>your page till now😔</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div  className=" md:block  max-w-4xl m-auto mt-8 p-2 ">
