@@ -131,13 +131,6 @@ export default async function UserPage({params}) {
         </Link>
       ))}
     </div>
-    <div className="flex items-center ">
-      <div className="ml-2 text-xs mb-2">
-       Make your own<Link className="ml-2 text-blue-700 opacity-100" href="https://github.com/AmanTrivedi1">Linkit</Link>
-      </div>
-      
-    </div>
-  
   </div>
 );
 }
