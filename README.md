@@ -4,13 +4,13 @@
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/AmanTrivedi1/customlink.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd customlink
 ```
 
 Install dependencies
