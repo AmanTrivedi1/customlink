@@ -9,7 +9,7 @@ export default async  function Header  ()  {
  const session = await  getServerSession(authOptions)
  console.log(session)
   return (
-    <div>
+    <div className=''>
        <header className=" bg-normal-dark p-4  ">
       <div className=" px-4  2xl:max-w-7xl max-w-6xl flex justify-between mx-auto ">
         <div className="flex items-center ">
