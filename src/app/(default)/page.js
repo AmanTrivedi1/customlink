@@ -1,12 +1,10 @@
 import React from 'react'
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-import HomePage from "./VisualPage";
-import InfoPage from "./InfoPage";
+
 import Link from 'next/link'
 import LogoutButton from '../../components/buttons/LogoutButton'
 import { WavyBackground } from "@/components/ui/wavy-background.tsx";
-import Header from "@/components/Header";
 import HeroForm from "@/components/forms/HeroForm";
 
 
@@ -23,7 +21,7 @@ export default async function Home() {
       <div className=" px-4  2xl:max-w-7xl max-w-6xl flex justify-between mx-auto ">
         <div className="flex items-center ">
           <Link href='/' className="flex text-xl items-center  text-white">
-            <span className="font-bold">LinkIt</span>
+      
           </Link>
         </div>
         {
@@ -53,13 +51,13 @@ export default async function Home() {
     <div className="max-w-4xl   mx-auto h-full ">
     <WavyBackground className=" mt-48 ">
       <div className="flex items-center max-w-2xl  gap-y-4  p-2 justify-center flex-col ">
-        <h1 className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+        <h1 className="text-5xl lg:text-7xl text-white font-bold inter-var text-center">
                Link It
         </h1>
         <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
            Paste everylink that you want to track
         </p>
-          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+          <p className="md:text-base text-xs  px-4  mt-4 text-white font-normal inter-var text-center">
             Welcome to Linkit Our platform offers a seamless solution for managing and sharing all your
             social media and important links in one convenient location. With Linkit, you can effortlessly 
             consolidate your online presence and track views on your shared links in real-time and gaining
