@@ -26,7 +26,7 @@ Start the server
 ```
 
         
-### Things you need before to run this webapp into your localhost:
+### Things you need before run this webapp into your localhost:
 
 | Parameter    | Key            |
 | :--------    | :------------------------- |
